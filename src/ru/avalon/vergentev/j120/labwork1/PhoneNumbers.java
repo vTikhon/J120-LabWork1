@@ -32,6 +32,4 @@ public class PhoneNumbers {
     public void setNumber(int number) {
         this.number = number;
     }
-
-
 }
