@@ -8,8 +8,8 @@ public class Main {
         //задаём коллекцию HashSet (интерфейса Set) для хранения объектов PhoneNumber (задание 1)
         Set<PhoneNumbers> phoneNumbers = new HashSet<>();
             //создаём два объекта типа PhoneNumber
-            PhoneNumbers phone1 = new PhoneNumbers(7962, 7051111);
-            PhoneNumbers phone2 = new PhoneNumbers(7962, 7051112);
+            PhoneNumbers phone1 = new PhoneNumbers(7962, 7050000);
+            PhoneNumbers phone2 = new PhoneNumbers(7962, 7050001);
             //помещаем в нашу коллекцию два объекта наших типа PhoneNumber
             phoneNumbers.add(phone1);
             phoneNumbers.add(phone2);
