@@ -2,12 +2,12 @@ package ru.avalon.vergentev.j120.labwork1;
 
 public class PhoneNumbers {
     private int code;
-    private int number;
+    private long number;
 
     //Constructors
     //по заданию 1 конструктор должен принимать два числа:
-    public PhoneNumbers(int code, int number) {
-        setCode(code);
+    public PhoneNumbers(long number) {
+//        setCode(code);
         setNumber(number);
     }
 
@@ -16,11 +16,11 @@ public class PhoneNumbers {
     @Override
     public String toString() {
         return "Phone number: +"
-                + code/1000
+                + number/10000000000L
                 + "-("
-                + (code%1000)/100
-                + (code%100)/10
-                + (code%10)
+                + (number%10000000000L)/1000000000
+                + (number%1000000000)/100000000
+                + (number%100000000)/10000000
                 + ")"
                 + (number%10000000)/1000000
                 + (number%1000000)/100000
@@ -44,7 +44,7 @@ public class PhoneNumbers {
     public long getNumber() {
         return number;
     }
-    public void setNumber(int number) {
+    public void setNumber(long number) {
         this.number = number;
     }
 }
