@@ -1,12 +1,12 @@
 package ru.avalon.vergentev.j120.labwork1;
 
-public class Linker {
-    public Linker next;
-    public String data;
+public class Linker<T> {
+    public Linker<T> next;
+    public T data;
 
 
     //Constructors
-    public Linker(String data) {
+    public Linker(T data) {
         this.data = data;
     }
 
