@@ -124,6 +124,9 @@ public class List<T> implements Iterable<T> {
         }
     }
 
+
+
+    //ДАЛЕЕ ТО, ЧТО Я ДОБАВИЛ ДЛЯ ВЫПОЛНЕНИЯ РАБОТЫ 1.2 J120
     //метод итератор - для того чтобы использовать for each по списку
     @Override
     public Iterator<T> iterator() {
@@ -148,8 +151,23 @@ public class List<T> implements Iterable<T> {
             System.out.println(i);
         }
     }
-
-
+    //метод перебора всего списка оператором for-each до заданного значения
+    public void printUntilKey (List<PhoneNumbers> myList1, PhoneNumbers phoneNumbers) {
+        for (PhoneNumbers i : myList1) {
+            if (i == phoneNumbers) {
+                System.out.println(i);
+                break;
+            }
+        }
+    }
+    //метод перебора всего списка оператором for-each после заданного значения
+    public void printAfterKey (List<PhoneNumbers> myList1, PhoneNumbers phoneNumbers) {
+        for (PhoneNumbers i : myList1) {
+            if (i == phoneNumbers) {
+                System.out.println(i);
+            }
+        }
+    }
 
     //Getters and Setters
 

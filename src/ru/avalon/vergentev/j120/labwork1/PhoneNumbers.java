@@ -1,13 +1,11 @@
 package ru.avalon.vergentev.j120.labwork1;
 
 public class PhoneNumbers {
-    private int code;
     private long number;
 
     //Constructors
     //по заданию 1 конструктор должен принимать два числа:
     public PhoneNumbers(long number) {
-//        setCode(code);
         setNumber(number);
     }
 
@@ -34,13 +32,6 @@ public class PhoneNumbers {
     }
 
     //Getters and Setters
-    public long getCode() {
-        return code;
-    }
-    public void setCode(int code) {
-        this.code = code;
-    }
-
     public long getNumber() {
         return number;
     }
