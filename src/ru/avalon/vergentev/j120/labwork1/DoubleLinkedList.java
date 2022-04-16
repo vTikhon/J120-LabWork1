@@ -1,8 +1,6 @@
 package ru.avalon.vergentev.j120.labwork1;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
 public class DoubleLinkedList<T> implements Iterable<T> {
     private Linker<T> head;
@@ -44,30 +42,14 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //прямой метод печатания заданного в main списка с проверкой его пустоты
-    public void print() {
-        try {
-            Linker<T> element = head;
-            while (element != null) {
-                System.out.println(element.data);
-                element = element.next;
-            }
-            System.out.print('\n');
-        } catch (IllegalArgumentException e) {
-            System.out.println(("The list is null. "));
-        }
-    }
-
     //метод извлечения элемента из начала списка (задание для односвязного списка)
     public Linker<T> extractionFromBegin() {
         return head;
     }
-
     //метод извлечения элемента из конца списка (задание для односвязного списка)
     public Linker<T> extractionFromEnd() {
         return tail;
     }
-
     //метод удаления элемента из начала списка (задание для односвязного списка)
     public void removingFromBegin() {
         if (head != tail) {
@@ -132,15 +114,15 @@ public class DoubleLinkedList<T> implements Iterable<T> {
     }
 
     //метод добавления элементов коллекции в начало списка
-    public void addCollectionToBegin (ArrayList<PhoneNumbers> arrayList) {
+    public void addCollectionToBegin (ArrayList<T> arrayList) {
         for (int i = arrayList.size()-1; i >= 0; i--) {
-            addToBegin((T) arrayList.get(i));
+            addToBegin(arrayList.get(i));
         }
     }
     //метод добавления элементов коллекции в конец списка
-    public void addCollectionToEnd (ArrayList<PhoneNumbers> arrayList) {
-        for (PhoneNumbers i : arrayList) {
-            addToEnd((T) i);
+    public void addCollectionToEnd (ArrayList<T> arrayList) {
+        for (T i : arrayList) {
+            addToEnd(i);
         }
     }
 
@@ -216,7 +198,46 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         };
     }
 
+    //метод перебора всего списка оператором foreach
+    public void printWithForEachFromBeginToEnd (DoubleLinkedList<T> doubleLinkedList) {
+        for (T i : doubleLinkedList) {
+            System.out.println(i);
+        }
+    }
+    //метод перебора всего списка оператором foreach
+    public void printWithForEachFromEndToBegin (DoubleLinkedList<T> doubleLinkedList) {
+        DoubleLinkedList<T> temp = new DoubleLinkedList<>();
+        doubleLinkedList.forEach(temp::addToBegin);
+        for (T i : temp) {
+            System.out.println(i);
+        }
+    }
+    //метод перебора всего списка от хвоста до заданного значения оператором foreach
+    public void printAfterKeyInverse (DoubleLinkedList<T> doubleLinkedList, T phoneNumbers) {
+        DoubleLinkedList<T> temp = new DoubleLinkedList<>();
+        doubleLinkedList.forEach(temp::addToBegin);
+        for (T i : temp) {
+            System.out.println(i);
+            if (i.equals(phoneNumbers)) {
+                break;
+            }
+        }
+    }
+    //метод перебора всего списка от заданного значения до головы оператором foreach
+    public void printUntilKeyInverse (DoubleLinkedList<T> doubleLinkedList, T phoneNumbers) {
+        DoubleLinkedList<T> temp = new DoubleLinkedList<>();
+        doubleLinkedList.forEach(temp::addToBegin);
+        for (T i : temp) {
+            if (i.equals(phoneNumbers)) {
+                break;
+            } else {
+                temp.removingFromBegin();
+            }
+        }
+        for (T i : temp) {
+            System.out.println(i);
+        }
+    }
 
-    //Getters and Setters
 
 }

@@ -1,18 +1,17 @@
 package ru.avalon.vergentev.j120.labwork1;
 
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
 public class SingleLinkedList<T> implements Iterable<T> {
     private Linker<T> head;
     private Linker<T> tail;
 
-    //Constructors
+    //CONSTRUCTORS
     public SingleLinkedList() {
         head = null;
     }
 
-    //Methods
+    //METHODS
     //метод определяющий является ли элемент пустым
     public boolean isEmpty() {
         return head == null;
@@ -42,30 +41,14 @@ public class SingleLinkedList<T> implements Iterable<T> {
         tail = element;
     }
 
-    //метод печатания заданного в main списка с проверкой его пустоты
-    public void print() {
-        try {
-            Linker<T> element = head;
-            while (element != null) {
-                System.out.println(element.data);
-                element = element.next;
-            }
-            System.out.print('\n');
-        } catch (IllegalArgumentException e) {
-            System.out.println(("The list is null. "));
-        }
-    }
-
     //метод извлечения элемента из начала списка (задание для односвязного списка)
     public Linker<T> extractionFromBegin() {
         return head;
     }
-
     //метод извлечения элемента из конца списка (задание для односвязного списка)
     public Linker<T> extractionFromEnd() {
         return tail;
     }
-
     //метод удаления элемента из начала списка (задание для односвязного списка)
     public void removingFromBegin() {
         if (head != tail) {
@@ -141,33 +124,36 @@ public class SingleLinkedList<T> implements Iterable<T> {
         };
     }
 
-    //метод перебора всего списка оператором for-each
-    public void printWithForEach (SingleLinkedList<PhoneNumbers> mySingleLinkedList1) {
-        for (PhoneNumbers i : mySingleLinkedList1) {
+    //метод перебора всего списка оператором foreach
+    public void printWithForEachFromBeginToEnd (SingleLinkedList<T> singleLinkedList) {
+        for (T i : singleLinkedList) {
             System.out.println(i);
         }
     }
-    //метод перебора всего списка оператором for-each до заданного значения
-    public void printUntilKey (SingleLinkedList<PhoneNumbers> singleLinkedList, PhoneNumbers phoneNumbers) {
-        for (PhoneNumbers i : singleLinkedList) {
+    //метод перебора всего списка от головы до заданного значения оператором foreach
+    public void printUntilKey (SingleLinkedList<T> singleLinkedList, T phoneNumbers) {
+        for (T i : singleLinkedList) {
             System.out.println(i);
             if (i.equals(phoneNumbers)) {
                 break;
             }
         }
     }
-    //метод перебора всего списка оператором for-each после заданного значения
-    public void printAfterKey (SingleLinkedList<PhoneNumbers> singleLinkedList, PhoneNumbers phoneNumbers) {
-        int s = 0;
-        int n = 0;
-        for (PhoneNumbers i : singleLinkedList) {
-            s++;
+    //метод перебора всего списка от заданного значения до хвоста оператором foreach
+    public void printAfterKey (SingleLinkedList<T> singleLinkedList, T phoneNumbers) {
+        DoubleLinkedList<T> temp = new DoubleLinkedList<>();
+        for (T i : singleLinkedList) {
+            temp.addToEnd(i);
+        }
+        for (T i : temp) {
             if (i.equals(phoneNumbers)) {
-                n = s-1;
+                break;
+            } else {
+                temp.removingFromBegin();
             }
         }
-        for (; n < singleLinkedList.getLength(); n++) {
-            System.out.println(getElement(n));
+        for (T i : temp) {
+            System.out.println(i);
         }
     }
 
@@ -200,9 +186,5 @@ public class SingleLinkedList<T> implements Iterable<T> {
         }
         return i;
     }
-
-
-
-    //Getters and Setters
 
 }
