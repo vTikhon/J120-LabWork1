@@ -59,6 +59,41 @@ public class Main {
         myList1.removingFromEnd(); //удаляем элемент конца списка
         myList1.print();
 
+        //задаём коллекцию ArrayList (аналогично заданию 3.1 j110) - задание 1.5 j120
+        ArrayList<PhoneNumbers> arrayList = new ArrayList<>(); // задаём коллекцию ArrayList
+        arrayList.add("11");
+        arrayList.add("22");
+        myList1.addCollectionToBegin(arrayList); //добавляем элементы коллекции в начало списка
+        myList1.addCollectionToEnd(arrayList); //добавляем элементы коллекции в конец списка
+        System.out.println("Modified list with arrayList is:");
+        myList1.print(); //выводим изменённый список на экран
+
+        DoubleLinkedList<PhoneNumbers> myList2 = new DoubleLinkedList();
+        myList2.addToEnd(new PhoneNumbers(79627050004L)));
+        myList2.addToEnd(new PhoneNumbers(79627050004L)));
+        myList2.addToBegin("new PhoneNumbers(79627050004L)));
+        myList2.addToBegin(new PhoneNumbers(79627050004L)));
+        System.out.println("The new list2 is:");
+        myList2.print(); //выводим наш список
+        myList1.absorptionListToBegin(myList2); //поглощаем созданный список первым списком с добавлением элементом в начало списка, затем удаляем поглощённый список
+        System.out.println("Modified list1 with absorption list2 at the begin:");
+        myList1.print();
+        System.out.println("Is the list2 null? List2 is:");
+        myList2.print(); //проверяем что List2 стал пустым
+
+        DoubleLinkedList<PhoneNumbers> myList3 = new List();
+        myList3.addToEnd("qqq");
+        myList3.addToEnd("rrr");
+        myList3.addToBegin("PPP");
+        myList3.addToBegin("OOO");
+        System.out.println("The new list3 is:");
+        myList3.print(); //выводим наш список
+        myList1.absorptionListToEnd(myList3); //поглощаем созданный список первым списком с добавлением элементом в конец списка, затем удаляем поглощённый список
+        System.out.println("Modified list1 with absorption list3 at the end:");
+        myList1.print();
+        System.out.println("Is the list3 null? List3 is:");
+        myList3.print(); //проверяем что List3 стал пустым
+
 
 
     }
