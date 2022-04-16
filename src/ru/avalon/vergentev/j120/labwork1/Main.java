@@ -1,12 +1,10 @@
 package ru.avalon.vergentev.j120.labwork1;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //задаём коллекцию HashSet (интерфейса Set) для хранения объектов PhoneNumber (задание 1.1 j120)
         Set<PhoneNumbers> phoneNumbersSet = new HashSet<>();
             //помещаем в Set (задание 1.1 j120)
@@ -26,6 +24,7 @@ public class Main {
         System.out.println(phoneNumbersMap);
         System.out.print('\n');
 
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //задаём односвязный список (аналогично заданию 3.1 j110) - задание 1.2 j120
         SingleLinkedList<PhoneNumbers> myList1 = new SingleLinkedList<>();
             myList1.addToEnd(new PhoneNumbers(79627050005L)); //добавляем элементы в конец
@@ -41,7 +40,6 @@ public class Main {
         System.out.print('\n');
         System.out.println("Print list until the set element:");
         myList1.printUntilKey(myList1, new PhoneNumbers(79627050005L)); //печатаем до заданного значения
-        System.out.print('\n');
         System.out.println("Print list after the set element:");
         myList1.printAfterKey(myList1, new PhoneNumbers(79627050003L)); //печатаем до заданного значения
         System.out.print('\n');
@@ -59,38 +57,47 @@ public class Main {
         myList1.removingFromEnd(); //удаляем элемент конца списка
         myList1.print();
 
-        //задаём коллекцию ArrayList (аналогично заданию 3.1 j110) - задание 1.5 j120
-        ArrayList<PhoneNumbers> arrayList = new ArrayList<>(); // задаём коллекцию ArrayList
-        arrayList.add("11");
-        arrayList.add("22");
-        myList1.addCollectionToBegin(arrayList); //добавляем элементы коллекции в начало списка
-        myList1.addCollectionToEnd(arrayList); //добавляем элементы коллекции в конец списка
-        System.out.println("Modified list with arrayList is:");
-        myList1.print(); //выводим изменённый список на экран
 
-        DoubleLinkedList<PhoneNumbers> myList2 = new DoubleLinkedList();
-        myList2.addToEnd(new PhoneNumbers(79627050004L)));
-        myList2.addToEnd(new PhoneNumbers(79627050004L)));
-        myList2.addToBegin("new PhoneNumbers(79627050004L)));
-        myList2.addToBegin(new PhoneNumbers(79627050004L)));
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.5<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //создаём двусвязный список (задание 1.5 j120)
+        DoubleLinkedList<PhoneNumbers> myList = new DoubleLinkedList<>();
+        myList.addToEnd(new PhoneNumbers(79627055555L));
+        myList.addToEnd(new PhoneNumbers(79627056666L));
+        myList.addToBegin(new PhoneNumbers(79627054444L));
+        System.out.println("The new list1 is:");
+        myList.print(); //выводим наш список
+
+        //задаём коллекцию ArrayList (аналогично заданию 3.1 j110) - задание 1.5 j120
+        ArrayList<PhoneNumbers> myArrayList = new ArrayList<>(); // задаём коллекцию ArrayList
+        myArrayList.add(new PhoneNumbers(11111111111L));
+        myArrayList.add(new PhoneNumbers(22222222222L));
+        myArrayList.add(new PhoneNumbers(33333333333L));
+        myList.addCollectionToBegin(myArrayList); //добавляем элементы коллекции в начало списка
+        myList.addCollectionToEnd(myArrayList); //добавляем элементы коллекции в конец списка
+        System.out.println("Modified list with arrayList is:");
+        myList.print(); //выводим изменённый список на экран
+
+        DoubleLinkedList<PhoneNumbers> myList2 = new DoubleLinkedList<>();
+        myList2.addToEnd(new PhoneNumbers(79627052222L));
+        myList2.addToEnd(new PhoneNumbers(79627053333L));
+        myList2.addToBegin(new PhoneNumbers(79627051111L));
         System.out.println("The new list2 is:");
         myList2.print(); //выводим наш список
-        myList1.absorptionListToBegin(myList2); //поглощаем созданный список первым списком с добавлением элементом в начало списка, затем удаляем поглощённый список
+        myList.absorptionListToBegin(myList2); //поглощаем созданный список первым списком с добавлением элементом в начало списка, затем удаляем поглощённый список
         System.out.println("Modified list1 with absorption list2 at the begin:");
-        myList1.print();
+        myList.print();
         System.out.println("Is the list2 null? List2 is:");
         myList2.print(); //проверяем что List2 стал пустым
 
-        DoubleLinkedList<PhoneNumbers> myList3 = new List();
-        myList3.addToEnd("qqq");
-        myList3.addToEnd("rrr");
-        myList3.addToBegin("PPP");
-        myList3.addToBegin("OOO");
+        DoubleLinkedList<PhoneNumbers> myList3 = new DoubleLinkedList<>();
+        myList3.addToEnd(new PhoneNumbers(79627058888L));
+        myList3.addToEnd(new PhoneNumbers(79627059999L));
+        myList3.addToBegin(new PhoneNumbers(79627057777L));
         System.out.println("The new list3 is:");
         myList3.print(); //выводим наш список
-        myList1.absorptionListToEnd(myList3); //поглощаем созданный список первым списком с добавлением элементом в конец списка, затем удаляем поглощённый список
+        myList.absorptionListToEnd(myList3); //поглощаем созданный список первым списком с добавлением элементом в конец списка, затем удаляем поглощённый список
         System.out.println("Modified list1 with absorption list3 at the end:");
-        myList1.print();
+        myList.print();
         System.out.println("Is the list3 null? List3 is:");
         myList3.print(); //проверяем что List3 стал пустым
 

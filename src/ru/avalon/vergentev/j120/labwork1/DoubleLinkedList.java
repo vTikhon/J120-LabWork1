@@ -1,5 +1,6 @@
 package ru.avalon.vergentev.j120.labwork1;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
 
     //метод добавления элемента в начало списка
     public void addToBegin(T data) {
-        Linker<T> element = new Linker<T>(data);
+        Linker<T> element = new Linker<>(data);
         if (isEmpty()) {
             head = element;
             tail = element;
@@ -33,7 +34,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
 
     //метод добавления элемента в конец списка
     public void addToEnd(T data) {
-        Linker<T> element = new Linker<T>(data);
+        Linker<T> element = new Linker<>(data);
         if (isEmpty()) {
             head = element;
             tail = element;
@@ -130,29 +131,16 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод добавления элементов массива в начало списка
-    public void addArrayToBegin (String [] array1) {
-        for (int i = array1.length-1; i >= 0; i--) {
-            addToBegin(array1[i]);
-        }
-    }
-    //метод добавления элементов массива в конец списка
-    public void addArrayToEnd (String [] array1) {
-        for (String i : array1) {
-            addToEnd(i);
-        }
-    }
-
     //метод добавления элементов коллекции в начало списка
-    public void addCollectionToBegin (ArrayList<T> list2) {
-        for (int i = list2.size()-1; i >= 0; i--) {
-            addToBegin(list2.get(i));
+    public void addCollectionToBegin (ArrayList<PhoneNumbers> arrayList) {
+        for (int i = arrayList.size()-1; i >= 0; i--) {
+            addToBegin((T) arrayList.get(i));
         }
     }
     //метод добавления элементов коллекции в конец списка
-    public void addCollectionToEnd (ArrayList<T> list2) {
-        for (String i : list2) {
-            addToEnd(i);
+    public void addCollectionToEnd (ArrayList<PhoneNumbers> arrayList) {
+        for (PhoneNumbers i : arrayList) {
+            addToEnd((T) i);
         }
     }
 
@@ -184,14 +172,14 @@ public class DoubleLinkedList<T> implements Iterable<T> {
     }
 
     //метод поглощения списка списком с добавлением его в начало списка
-    public void absorptionListToBegin (List list) {
+    public void absorptionListToBegin (DoubleLinkedList<T> list) {
         for (int i = list.getLength()-1; i >= 0; i--) {
             addToBegin(list.getElement(i));
             list.removingFromEnd();
         }
     }
     //метод поглощения списка списком с добавлением его в конец списка
-    public void absorptionListToEnd (List list) {
+    public void absorptionListToEnd (DoubleLinkedList<T> list) {
         for (int i = 0; i < list.getLength(); i++) {
             addToEnd(list.getElement(i));
         }
