@@ -14,8 +14,7 @@ public class PhoneNumbers {
     //переопределяем метод toString, который будет выводить наши данные в нужном нам виде
     @Override
     public String toString() {
-        return "Phone number: +"
-                + number/10000000000L
+        return "+" + number/10000000000L
                 + "-("
                 + (number%10000000000L)/1000000000
                 + (number%1000000000)/100000000

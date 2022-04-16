@@ -2,14 +2,17 @@ package ru.avalon.vergentev.j120.labwork1;
 
 public class Linker<T> {
     public Linker<T> next;
+    public Linker<T> prev;
     public T data;
 
-
-    //Constructors
+    //CONSTRUCTORS
     public Linker(T data) {
         this.data = data;
     }
 
-    //Getters and Setters
-
+    //METHODS
+    @Override
+    public String toString() {
+        return "" + data;
+    }
 }

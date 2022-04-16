@@ -92,7 +92,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     //метод определения на содержание заданного значения
-    public Linker<T> keySearch(String key) {
+    public Linker<T> keySearch(T key) {
         Linker<T> element = head;
         while (element != null) {
             if (Objects.equals(element.data, key)) {
@@ -104,7 +104,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     //метод удаления из списка заданного значения (задание для односвязного списка)
-    public void keySearchAndRemove(String key) {
+    public void keySearchAndRemove(T key) {
         Linker<T> element = head;
         Linker<T> previousElement = head;
         while (element.data != null && !element.data.equals(key)) {
@@ -120,7 +120,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //ДАЛЕЕ ТО, ЧТО Я ДОБАВИЛ ДЛЯ ВЫПОЛНЕНИЯ РАБОТЫ 1.2 J120
+    //ДАЛЕЕ МЕТОДЫ РАБОТЫ 1.2 J120
     //метод итератор - для того чтобы использовать for each по списку
     @Override
     public Iterator<T> iterator() {

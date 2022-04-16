@@ -28,19 +28,36 @@ public class Main {
 
         //задаЄм односв€зный список (аналогично заданию 3.1 j110) - задание 1.2 j120
         SingleLinkedList<PhoneNumbers> myList1 = new SingleLinkedList<>();
-            myList1.addToEnd(new PhoneNumbers(79627050005L));
+            myList1.addToEnd(new PhoneNumbers(79627050005L)); //добавл€ем элементы в конец
             myList1.addToEnd(new PhoneNumbers(79627050006L));
             myList1.addToEnd(new PhoneNumbers(79627050007L));
             myList1.addToEnd(new PhoneNumbers(79627050008L));
-            myList1.addToBegin(new PhoneNumbers(79627050004L));
+            myList1.addToBegin(new PhoneNumbers(79627050004L)); //добавл€ем элементы в начало
             myList1.addToBegin(new PhoneNumbers(79627050003L));
             myList1.addToBegin(new PhoneNumbers(79627050002L));
             myList1.addToBegin(new PhoneNumbers(79627050001L));
+        System.out.println("Print list:");
         myList1.printWithForEach(myList1);  //печатаем методом for each (дл€ этого определили итератор)
         System.out.print('\n');
+        System.out.println("Print list until the set element:");
         myList1.printUntilKey(myList1, new PhoneNumbers(79627050005L)); //печатаем до заданного значени€
         System.out.print('\n');
+        System.out.println("Print list after the set element:");
         myList1.printAfterKey(myList1, new PhoneNumbers(79627050003L)); //печатаем до заданного значени€
+        System.out.print('\n');
+        System.out.println("Searching the element:");
+        System.out.println(myList1.keySearch(new PhoneNumbers(79627050004L))); //ищем заданный элемент
+        myList1.keySearchAndRemove(new PhoneNumbers(79627050004L)); //ищем и удал€ем заданный элемент
+        System.out.println("Modified list after removing the element:");
+        myList1.print();
+        System.out.print('\n');
+        System.out.println("Extracted elements from begin and end:");
+        System.out.println(myList1.extractionFromBegin());
+        System.out.println(myList1.extractionFromEnd());
+        System.out.println("Removing elements from begin and end:");
+        myList1.removingFromBegin(); //удал€ем элемент начала списка
+        myList1.removingFromEnd(); //удал€ем элемент конца списка
+        myList1.print();
 
 
 
