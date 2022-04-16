@@ -1,10 +1,11 @@
 package ru.avalon.vergentev.j120.labwork1;
 
+import java.util.Objects;
+
 public class PhoneNumbers {
     private long number;
 
     //Constructors
-    //по заданию 1 конструктор должен принимать два числа:
     public PhoneNumbers(long number) {
         setNumber(number);
     }
@@ -29,6 +30,20 @@ public class PhoneNumbers {
                 + "-"
                 + (number%100)/10
                 + number%10;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PhoneNumbers that = (PhoneNumbers) o;
+        return number == that.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 
     //Getters and Setters

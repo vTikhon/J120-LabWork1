@@ -27,7 +27,7 @@ public class Main {
         System.out.print('\n');
 
         //задаём односвязный список (аналогично заданию 3.1 j110) - задание 1.2 j120
-        List<PhoneNumbers> myList1 = new List<>();
+        SingleLinkedList<PhoneNumbers> myList1 = new SingleLinkedList<>();
             myList1.addToEnd(new PhoneNumbers(79627050005L));
             myList1.addToEnd(new PhoneNumbers(79627050006L));
             myList1.addToEnd(new PhoneNumbers(79627050007L));
@@ -36,8 +36,10 @@ public class Main {
             myList1.addToBegin(new PhoneNumbers(79627050003L));
             myList1.addToBegin(new PhoneNumbers(79627050002L));
             myList1.addToBegin(new PhoneNumbers(79627050001L));
-//        myList1.printWithForEach(myList1);  //печатаем методом for each (для этого определили итератор)
+        myList1.printWithForEach(myList1);  //печатаем методом for each (для этого определили итератор)
+        System.out.print('\n');
         myList1.printUntilKey(myList1, new PhoneNumbers(79627050005L)); //печатаем до заданного значения
+        System.out.print('\n');
         myList1.printAfterKey(myList1, new PhoneNumbers(79627050003L)); //печатаем до заданного значения
 
 
