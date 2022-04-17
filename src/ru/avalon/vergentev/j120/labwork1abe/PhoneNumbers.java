@@ -1,4 +1,4 @@
-package ru.avalon.vergentev.j120.labwork1;
+package ru.avalon.vergentev.j120.labwork1abe;
 
 import java.util.Objects;
 
