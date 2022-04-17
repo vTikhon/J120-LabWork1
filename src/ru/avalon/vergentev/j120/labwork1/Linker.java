@@ -1,7 +1,5 @@
 package ru.avalon.vergentev.j120.labwork1;
 
-import java.util.Iterator;
-
 public class Linker<T> {
     public Linker<T> next;
     public Linker<T> prev;
