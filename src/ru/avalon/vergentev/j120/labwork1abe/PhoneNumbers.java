@@ -1,6 +1,6 @@
 package ru.avalon.vergentev.j120.labwork1abe;
+import java.util.*;
 
-import java.util.Objects;
 
 public class PhoneNumbers {
     private long number;
@@ -11,7 +11,6 @@ public class PhoneNumbers {
     }
 
     //Methods
-    //переопределяем метод toString, который будет выводить наши данные в нужном нам виде
     @Override
     public String toString() {
         return "+" + number/10000000000L

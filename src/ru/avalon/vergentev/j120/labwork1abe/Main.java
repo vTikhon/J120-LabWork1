@@ -3,101 +3,101 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //задаём коллекцию HashSet (интерфейса Set) для хранения объектов PhoneNumber (задание 1.1 j120)
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>Р—РђР”РђРќРР• 1.1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //Р·Р°РґР°С‘Рј РєРѕР»Р»РµРєС†РёСЋ HashSet (РёРЅС‚РµСЂС„РµР№СЃР° Set) РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РѕР±СЉРµРєС‚РѕРІ PhoneNumber (Р·Р°РґР°РЅРёРµ 1.1 j120)
         Set<PhoneNumbers> phoneNumbersSet = new HashSet<>();
-            //помещаем в Set (задание 1.1 j120)
-            phoneNumbersSet.add(new PhoneNumbers(79627050000L));
-            phoneNumbersSet.add(new PhoneNumbers(79627050001L));
-            phoneNumbersSet.add(new PhoneNumbers(79627050002L));
-            phoneNumbersSet.add(new PhoneNumbers(79627050003L));
-        //задаём коллекцию HashMap (интерфейса Map) для хранения объектов PhoneNumber (задание 1.1 j120)
+        //РїРѕРјРµС‰Р°РµРј РІ Set (Р·Р°РґР°РЅРёРµ 1.1 j120)
+        phoneNumbersSet.add(new PhoneNumbers(79627050000L));
+        phoneNumbersSet.add(new PhoneNumbers(79627050001L));
+        phoneNumbersSet.add(new PhoneNumbers(79627050002L));
+        phoneNumbersSet.add(new PhoneNumbers(79627050003L));
+        //Р·Р°РґР°С‘Рј РєРѕР»Р»РµРєС†РёСЋ HashMap (РёРЅС‚РµСЂС„РµР№СЃР° Map) РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РѕР±СЉРµРєС‚РѕРІ PhoneNumber (Р·Р°РґР°РЅРёРµ 1.1 j120)
         Map<Long, String> phoneNumbersMap = new HashMap<>();
-            //помещаем в HashMap (задание 1.1 j120)
-            phoneNumbersMap.put(79627050004L, "phone1");
-            phoneNumbersMap.put(79627050005L, "phone2");
-            phoneNumbersMap.put(79627050006L, "phone3");
-            phoneNumbersMap.put(79627050007L, "phone4");
-        //выводим в консоль наши номера из коллекций SetHash и MapHash (задание 1.1 j120)
+        //РїРѕРјРµС‰Р°РµРј РІ HashMap (Р·Р°РґР°РЅРёРµ 1.1 j120)
+        phoneNumbersMap.put(79627050004L, "phone1");
+        phoneNumbersMap.put(79627050005L, "phone2");
+        phoneNumbersMap.put(79627050006L, "phone3");
+        phoneNumbersMap.put(79627050007L, "phone4");
+        //РІС‹РІРѕРґРёРј РІ РєРѕРЅСЃРѕР»СЊ РЅР°С€Рё РЅРѕРјРµСЂР° РёР· РєРѕР»Р»РµРєС†РёР№ SetHash Рё MapHash (Р·Р°РґР°РЅРёРµ 1.1 j120)
         System.out.println(phoneNumbersSet);
         System.out.println(phoneNumbersMap);
         System.out.print('\n');
 
 
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //задаём односвязный список (аналогично заданию 3.1 j110) - задание 1.2 j120
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>Р—РђР”РђРќРР• 1.2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //Р·Р°РґР°С‘Рј РѕРґРЅРѕСЃРІСЏР·РЅС‹Р№ СЃРїРёСЃРѕРє (Р°РЅР°Р»РѕРіРёС‡РЅРѕ Р·Р°РґР°РЅРёСЋ 3.1 j110) - Р·Р°РґР°РЅРёРµ 1.2 j120
         SingleLinkedList<PhoneNumbers> myList1 = new SingleLinkedList<>();
-            myList1.addToEnd(new PhoneNumbers(79627050005L)); //добавляем элементы в конец
-            myList1.addToEnd(new PhoneNumbers(79627050006L));
-            myList1.addToEnd(new PhoneNumbers(79627050007L));
-            myList1.addToEnd(new PhoneNumbers(79627050008L));
-            myList1.addToBegin(new PhoneNumbers(79627050004L)); //добавляем элементы в начало
-            myList1.addToBegin(new PhoneNumbers(79627050003L));
-            myList1.addToBegin(new PhoneNumbers(79627050002L));
-            myList1.addToBegin(new PhoneNumbers(79627050001L));
+        myList1.addToEnd(new PhoneNumbers(79627050005L)); //РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚С‹ РІ РєРѕРЅРµС†
+        myList1.addToEnd(new PhoneNumbers(79627050006L));
+        myList1.addToEnd(new PhoneNumbers(79627050007L));
+        myList1.addToEnd(new PhoneNumbers(79627050008L));
+        myList1.addToBegin(new PhoneNumbers(79627050004L)); //РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚С‹ РІ РЅР°С‡Р°Р»Рѕ
+        myList1.addToBegin(new PhoneNumbers(79627050003L));
+        myList1.addToBegin(new PhoneNumbers(79627050002L));
+        myList1.addToBegin(new PhoneNumbers(79627050001L));
         System.out.println("Print list:");
-        myList1.printWithForEachFromBeginToEnd(myList1); //печатаем список методом for each (для этого определили итератор)
+        myList1.printWithForEachFromBeginToEnd(myList1); //РїРµС‡Р°С‚Р°РµРј СЃРїРёСЃРѕРє РјРµС‚РѕРґРѕРј for each (РґР»СЏ СЌС‚РѕРіРѕ РѕРїСЂРµРґРµР»РёР»Рё РёС‚РµСЂР°С‚РѕСЂ)
         System.out.print('\n');
         System.out.println("Print list until the set element:");
-        myList1.printUntilKey(myList1, new PhoneNumbers(79627050005L)); //печатаем до заданного значения (если элемента нет, то выводим всё)
+        myList1.printUntilKey(myList1, new PhoneNumbers(79627050005L)); //РїРµС‡Р°С‚Р°РµРј РґРѕ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ (РµСЃР»Рё СЌР»РµРјРµРЅС‚Р° РЅРµС‚, С‚Рѕ РІС‹РІРѕРґРёРј РІСЃС‘)
         System.out.println("Print list after the set element:");
-        myList1.printAfterKey(myList1, new PhoneNumbers(79627050006L)); //печатаем после заданного значения (если элемента нет, то ничего не выводим)
+        myList1.printAfterKey(myList1, new PhoneNumbers(79627050006L)); //РїРµС‡Р°С‚Р°РµРј РїРѕСЃР»Рµ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ (РµСЃР»Рё СЌР»РµРјРµРЅС‚Р° РЅРµС‚, С‚Рѕ РЅРёС‡РµРіРѕ РЅРµ РІС‹РІРѕРґРёРј)
         System.out.print('\n');
         System.out.println("Searching the element:");
-        System.out.println(myList1.keySearch(new PhoneNumbers(79627050004L))); //ищем заданный элемент
-        myList1.keySearchAndRemove(new PhoneNumbers(79627050004L)); //ищем и удаляем заданный элемент
+        System.out.println(myList1.keySearch(new PhoneNumbers(79627050004L))); //РёС‰РµРј Р·Р°РґР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
+        myList1.keySearchAndRemove(new PhoneNumbers(79627050004L)); //РёС‰РµРј Рё СѓРґР°Р»СЏРµРј Р·Р°РґР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
         System.out.println("Modified list after removing the element:");
-        myList1.printWithForEachFromBeginToEnd(myList1); //печатаем список методом for each (для этого определили итератор)
+        myList1.printWithForEachFromBeginToEnd(myList1); //РїРµС‡Р°С‚Р°РµРј СЃРїРёСЃРѕРє РјРµС‚РѕРґРѕРј for each (РґР»СЏ СЌС‚РѕРіРѕ РѕРїСЂРµРґРµР»РёР»Рё РёС‚РµСЂР°С‚РѕСЂ)
         System.out.print('\n');
         System.out.println("Extracted elements from begin and end:");
         System.out.println(myList1.extractionFromBegin());
         System.out.println(myList1.extractionFromEnd());
         System.out.println("Removing elements from begin and end:");
-        myList1.removingFromBegin(); //удаляем элемент начала списка
-        myList1.removingFromEnd(); //удаляем элемент конца списка
-        myList1.printWithForEachFromBeginToEnd(myList1); //печатаем список методом for each (для этого определили итератор)
+        myList1.removingFromBegin(); //СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚ РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
+        myList1.removingFromEnd(); //СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚ РєРѕРЅС†Р° СЃРїРёСЃРєР°
+        myList1.printWithForEachFromBeginToEnd(myList1); //РїРµС‡Р°С‚Р°РµРј СЃРїРёСЃРѕРє РјРµС‚РѕРґРѕРј for each (РґР»СЏ СЌС‚РѕРіРѕ РѕРїСЂРµРґРµР»РёР»Рё РёС‚РµСЂР°С‚РѕСЂ)
 
 
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>ЗАДАНИЕ 1.5<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //создаём двусвязный список (задание 1.5 j120)
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>Р—РђР”РђРќРР• 1.5<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //СЃРѕР·РґР°С‘Рј РґРІСѓСЃРІСЏР·РЅС‹Р№ СЃРїРёСЃРѕРє (Р·Р°РґР°РЅРёРµ 1.5 j120)
         DoubleLinkedList<PhoneNumbers> myList = new DoubleLinkedList<>();
-            myList.addToEnd(new PhoneNumbers(79627055555L));
-            myList.addToEnd(new PhoneNumbers(79627056666L));
-            myList.addToBegin(new PhoneNumbers(79627054444L));
+        myList.addToEnd(new PhoneNumbers(79627055555L));
+        myList.addToEnd(new PhoneNumbers(79627056666L));
+        myList.addToBegin(new PhoneNumbers(79627054444L));
         System.out.print('\n');
         System.out.println("The new list1 is:");
-        myList.printWithForEachFromEndToBegin(myList); //выводим наш список в обратном порядке
-        //задаём коллекцию ArrayList (аналогично заданию 3.2 j110) - задание 1.5 j120
-        ArrayList<PhoneNumbers> myArrayList = new ArrayList<>(); // задаём коллекцию ArrayList
-            myArrayList.add(new PhoneNumbers(11111111111L));
-            myArrayList.add(new PhoneNumbers(22222222222L));
-        myList.addCollectionToBegin(myArrayList); //добавляем элементы коллекции в начало списка
-        myList.addCollectionToEnd(myArrayList); //добавляем элементы коллекции в конец списка
+        myList.printWithForEachFromEndToBegin(myList); //РІС‹РІРѕРґРёРј РЅР°С€ СЃРїРёСЃРѕРє РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
+        //Р·Р°РґР°С‘Рј РєРѕР»Р»РµРєС†РёСЋ ArrayList (Р°РЅР°Р»РѕРіРёС‡РЅРѕ Р·Р°РґР°РЅРёСЋ 3.2 j110) - Р·Р°РґР°РЅРёРµ 1.5 j120
+        ArrayList<PhoneNumbers> myArrayList = new ArrayList<>(); // Р·Р°РґР°С‘Рј РєРѕР»Р»РµРєС†РёСЋ ArrayList
+        myArrayList.add(new PhoneNumbers(11111111111L));
+        myArrayList.add(new PhoneNumbers(22222222222L));
+        myList.addCollectionToBegin(myArrayList); //РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚С‹ РєРѕР»Р»РµРєС†РёРё РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
+        myList.addCollectionToEnd(myArrayList); //РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚С‹ РєРѕР»Р»РµРєС†РёРё РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
         System.out.print('\n');
         System.out.println("Modified list1 with arrayList is:");
-        myList.printWithForEachFromEndToBegin(myList); //выводим наш список в обратном порядке
-        //задаём два списка, которые будем поглощать и аннулировать (аналогично заданию 3.2 j110) - задание 1.5 j120
+        myList.printWithForEachFromEndToBegin(myList); //РІС‹РІРѕРґРёРј РЅР°С€ СЃРїРёСЃРѕРє РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
+        //Р·Р°РґР°С‘Рј РґРІР° СЃРїРёСЃРєР°, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґРµРј РїРѕРіР»РѕС‰Р°С‚СЊ Рё Р°РЅРЅСѓР»РёСЂРѕРІР°С‚СЊ (Р°РЅР°Р»РѕРіРёС‡РЅРѕ Р·Р°РґР°РЅРёСЋ 3.2 j110) - Р·Р°РґР°РЅРёРµ 1.5 j120
         DoubleLinkedList<PhoneNumbers> myList2 = new DoubleLinkedList<>();
-            myList2.addToEnd(new PhoneNumbers(79627052222L));
-            myList2.addToEnd(new PhoneNumbers(79627053333L));
-            myList2.addToBegin(new PhoneNumbers(79627051111L));
+        myList2.addToEnd(new PhoneNumbers(79627052222L));
+        myList2.addToEnd(new PhoneNumbers(79627053333L));
+        myList2.addToBegin(new PhoneNumbers(79627051111L));
         DoubleLinkedList<PhoneNumbers> myList3 = new DoubleLinkedList<>();
-            myList3.addToEnd(new PhoneNumbers(79627058888L));
-            myList3.addToEnd(new PhoneNumbers(79627059999L));
-            myList3.addToBegin(new PhoneNumbers(79627057777L));
-        myList.absorptionListToBegin(myList2); //поглощаем myList2 первым списком myList с добавлением элементом в начало списка, затем удаляем поглощённый список
-        myList.absorptionListToEnd(myList3); //поглощаем myList3 первым списком myList с добавлением элементом в конец списка, затем удаляем поглощённый список
+        myList3.addToEnd(new PhoneNumbers(79627058888L));
+        myList3.addToEnd(new PhoneNumbers(79627059999L));
+        myList3.addToBegin(new PhoneNumbers(79627057777L));
+        myList.absorptionListToBegin(myList2); //РїРѕРіР»РѕС‰Р°РµРј myList2 РїРµСЂРІС‹Рј СЃРїРёСЃРєРѕРј myList СЃ РґРѕР±Р°РІР»РµРЅРёРµРј СЌР»РµРјРµРЅС‚РѕРј РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°, Р·Р°С‚РµРј СѓРґР°Р»СЏРµРј РїРѕРіР»РѕС‰С‘РЅРЅС‹Р№ СЃРїРёСЃРѕРє
+        myList.absorptionListToEnd(myList3); //РїРѕРіР»РѕС‰Р°РµРј myList3 РїРµСЂРІС‹Рј СЃРїРёСЃРєРѕРј myList СЃ РґРѕР±Р°РІР»РµРЅРёРµРј СЌР»РµРјРµРЅС‚РѕРј РІ РєРѕРЅРµС† СЃРїРёСЃРєР°, Р·Р°С‚РµРј СѓРґР°Р»СЏРµРј РїРѕРіР»РѕС‰С‘РЅРЅС‹Р№ СЃРїРёСЃРѕРє
         System.out.print('\n');
         System.out.println("Modified list1 with absorption list2 at the begin and list3 at the end:");
-        myList.printWithForEachFromBeginToEnd(myList); //выводим наш список в обратном порядке
+        myList.printWithForEachFromBeginToEnd(myList); //РІС‹РІРѕРґРёРј РЅР°С€ СЃРїРёСЃРѕРє РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
         System.out.println("Are the lists 2 and 3 null? Lists are:");
-        myList2.printWithForEachFromBeginToEnd(myList2); //проверяем что List2 стал пустым
-        myList3.printWithForEachFromBeginToEnd(myList3); //проверяем что List3 стал пустым
+        myList2.printWithForEachFromBeginToEnd(myList2); //РїСЂРѕРІРµСЂСЏРµРј С‡С‚Рѕ List2 СЃС‚Р°Р» РїСѓСЃС‚С‹Рј
+        myList3.printWithForEachFromBeginToEnd(myList3); //РїСЂРѕРІРµСЂСЏРµРј С‡С‚Рѕ List3 СЃС‚Р°Р» РїСѓСЃС‚С‹Рј
         System.out.print('\n');
         System.out.println("Print list after the set element (from tail to element):");
-        myList.printAfterKeyInverse(myList, new PhoneNumbers(11111111111L));  //печатаем от хвоста до заданного значения (если элемента нет, то выводим всё)
+        myList.printAfterKeyInverse(myList, new PhoneNumbers(11111111111L));  //РїРµС‡Р°С‚Р°РµРј РѕС‚ С…РІРѕСЃС‚Р° РґРѕ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ (РµСЃР»Рё СЌР»РµРјРµРЅС‚Р° РЅРµС‚, С‚Рѕ РІС‹РІРѕРґРёРј РІСЃС‘)
         System.out.println("Print list after the set element (from element to head):");
-        myList.printUntilKeyInverse(myList, new PhoneNumbers(79627054444L));  //печатаем от заданного значения до головы списка (если элемента нет, то ничего не выводим)
+        myList.printUntilKeyInverse(myList, new PhoneNumbers(79627054444L));  //РїРµС‡Р°С‚Р°РµРј РѕС‚ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РґРѕ РіРѕР»РѕРІС‹ СЃРїРёСЃРєР° (РµСЃР»Рё СЌР»РµРјРµРЅС‚Р° РЅРµС‚, С‚Рѕ РЅРёС‡РµРіРѕ РЅРµ РІС‹РІРѕРґРёРј)
         System.out.print('\n');
 
 

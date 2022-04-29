@@ -1,5 +1,4 @@
 package ru.avalon.vergentev.j120.labwork1abe;
-
 import java.util.*;
 
 public class DoubleLinkedList<T> implements Iterable<T> {
@@ -13,12 +12,12 @@ public class DoubleLinkedList<T> implements Iterable<T> {
     }
 
     //METHODS
-    //метод определяющий является ли элемент пустым
+    //РјРµС‚РѕРґ РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЌР»РµРјРµРЅС‚ РїСѓСЃС‚С‹Рј
     public boolean isEmpty() {
         return head == null;
     }
 
-    //метод добавления элемента в начало списка
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
     public void addToBegin(T data) {
         Linker<T> element = new Linker<>(data);
         if (isEmpty()) {
@@ -30,7 +29,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод добавления элемента в конец списка
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
     public void addToEnd(T data) {
         Linker<T> element = new Linker<>(data);
         if (isEmpty()) {
@@ -42,15 +41,15 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод извлечения элемента из начала списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ РёР·РІР»РµС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public Linker<T> extractionFromBegin() {
         return head;
     }
-    //метод извлечения элемента из конца списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ РёР·РІР»РµС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР° (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public Linker<T> extractionFromEnd() {
         return tail;
     }
-    //метод удаления элемента из начала списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public void removingFromBegin() {
         if (head != tail) {
             head = head.next;
@@ -59,7 +58,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод удаления элемента из конца списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР° (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public void removingFromEnd() {
         Linker<T> element = head;
         if (head != tail) {
@@ -75,7 +74,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
             head = null;
         }
     }
-    //правильный метод удаления элемента из конца списка в случае двусвязного списка (ПОЧЕМУ-ТО НЕ РАБОТАЕТ)
+    //РїСЂР°РІРёР»СЊРЅС‹Р№ РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР° РІ СЃР»СѓС‡Р°Рµ РґРІСѓСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР° (РџРћР§Р•РњРЈ-РўРћ РќР• Р РђР‘РћРўРђР•Рў)
 //    public void removingFromEnd () {
 //        if (head != tail) {
 //            tail = tail.prev;
@@ -84,7 +83,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
 //        }
 //    }
 
-    //метод определения на содержание заданного значения (задание для односвязного списка)
+    //РјРµС‚РѕРґ РѕРїСЂРµРґРµР»РµРЅРёСЏ РЅР° СЃРѕРґРµСЂР¶Р°РЅРёРµ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public Linker<T> keySearch(String key) {
         Linker<T> element = head;
         while (element != null) {
@@ -96,7 +95,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         return null;
     }
 
-    //метод удаления из списка заданного значения (задание для односвязного списка)
+    //РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РёР· СЃРїРёСЃРєР° Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ (Р·Р°РґР°РЅРёРµ РґР»СЏ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°)
     public void keySearchAndRemove(String key) {
         Linker<T> element = head;
         Linker<T> previousElement = head;
@@ -113,20 +112,20 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод добавления элементов коллекции в начало списка
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РєРѕР»Р»РµРєС†РёРё РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
     public void addCollectionToBegin (ArrayList<T> arrayList) {
         for (int i = arrayList.size()-1; i >= 0; i--) {
             addToBegin(arrayList.get(i));
         }
     }
-    //метод добавления элементов коллекции в конец списка
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РєРѕР»Р»РµРєС†РёРё РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
     public void addCollectionToEnd (ArrayList<T> arrayList) {
         for (T i : arrayList) {
             addToEnd(i);
         }
     }
 
-    //метод получения N-ого элемента (вспомогательный метод для реализации поглощения списка списком)
+    //РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ N-РѕРіРѕ СЌР»РµРјРµРЅС‚Р° (РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ СЂРµР°Р»РёР·Р°С†РёРё РїРѕРіР»РѕС‰РµРЅРёСЏ СЃРїРёСЃРєР° СЃРїРёСЃРєРѕРј)
     public T getElement (int N) {
         int i = 0;
         Linker<T> element = head;
@@ -142,7 +141,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод счёта длины списка (вспомогательный метод для реализации поглощения списка списком)
+    //РјРµС‚РѕРґ СЃС‡С‘С‚Р° РґР»РёРЅС‹ СЃРїРёСЃРєР° (РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ СЂРµР°Р»РёР·Р°С†РёРё РїРѕРіР»РѕС‰РµРЅРёСЏ СЃРїРёСЃРєР° СЃРїРёСЃРєРѕРј)
     public int getLength () {
         int i = 0;
         Linker<T> element = head;
@@ -153,14 +152,14 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         return i;
     }
 
-    //метод поглощения списка списком с добавлением его в начало списка
+    //РјРµС‚РѕРґ РїРѕРіР»РѕС‰РµРЅРёСЏ СЃРїРёСЃРєР° СЃРїРёСЃРєРѕРј СЃ РґРѕР±Р°РІР»РµРЅРёРµРј РµРіРѕ РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
     public void absorptionListToBegin (DoubleLinkedList<T> list) {
         for (int i = list.getLength()-1; i >= 0; i--) {
             addToBegin(list.getElement(i));
             list.removingFromEnd();
         }
     }
-    //метод поглощения списка списком с добавлением его в конец списка
+    //РјРµС‚РѕРґ РїРѕРіР»РѕС‰РµРЅРёСЏ СЃРїРёСЃРєР° СЃРїРёСЃРєРѕРј СЃ РґРѕР±Р°РІР»РµРЅРёРµРј РµРіРѕ РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
     public void absorptionListToEnd (DoubleLinkedList<T> list) {
         for (int i = 0; i < list.getLength(); i++) {
             addToEnd(list.getElement(i));
@@ -170,15 +169,8 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //обратный метод печатания заданного в main списка с проверкой его пустоты
-    public void printInverse () {
-        for (int i = getLength()-1; i >= 0; i--) {
-            System.out.println(getElement(i));
-        }
-    }
-
-    //ДАЛЕЕ МЕТОДЫ РАБОТЫ 1.5 J120
-    //метод итератор - для того чтобы использовать for each по списку
+    //Р”РђР›Р•Р• РњР•РўРћР”Р« Р РђР‘РћРўР« 1.5 J120
+    //РјРµС‚РѕРґ РёС‚РµСЂР°С‚РѕСЂ - РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ for each РїРѕ СЃРїРёСЃРєСѓ
     @Override
     public Iterator<T> iterator() {
         return new Iterator<>() {
@@ -198,13 +190,14 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         };
     }
 
-    //метод перебора всего списка оператором foreach
+    //РјРµС‚РѕРґ РїРµСЂРµР±РѕСЂР° РІСЃРµРіРѕ СЃРїРёСЃРєР° РѕРїРµСЂР°С‚РѕСЂРѕРј foreach
     public void printWithForEachFromBeginToEnd (DoubleLinkedList<T> doubleLinkedList) {
         for (T i : doubleLinkedList) {
             System.out.println(i);
         }
     }
-    //метод перебора всего списка оператором foreach
+
+    //РјРµС‚РѕРґ РїРµСЂРµР±РѕСЂР° РІСЃРµРіРѕ СЃРїРёСЃРєР° РѕРїРµСЂР°С‚РѕСЂРѕРј foreach
     public void printWithForEachFromEndToBegin (DoubleLinkedList<T> doubleLinkedList) {
         DoubleLinkedList<T> temp = new DoubleLinkedList<>();
         doubleLinkedList.forEach(temp::addToBegin);
@@ -212,7 +205,8 @@ public class DoubleLinkedList<T> implements Iterable<T> {
             System.out.println(i);
         }
     }
-    //метод перебора всего списка от хвоста до заданного значения оператором foreach
+
+    //РјРµС‚РѕРґ РїРµСЂРµР±РѕСЂР° РІСЃРµРіРѕ СЃРїРёСЃРєР° РѕС‚ С…РІРѕСЃС‚Р° РґРѕ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РѕРїРµСЂР°С‚РѕСЂРѕРј foreach
     public void printAfterKeyInverse (DoubleLinkedList<T> doubleLinkedList, T phoneNumbers) {
         DoubleLinkedList<T> temp = new DoubleLinkedList<>();
         doubleLinkedList.forEach(temp::addToBegin);
@@ -223,7 +217,8 @@ public class DoubleLinkedList<T> implements Iterable<T> {
             }
         }
     }
-    //метод перебора всего списка от заданного значения до головы оператором foreach
+
+    //РјРµС‚РѕРґ РїРµСЂРµР±РѕСЂР° РІСЃРµРіРѕ СЃРїРёСЃРєР° РѕС‚ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РґРѕ РіРѕР»РѕРІС‹ РѕРїРµСЂР°С‚РѕСЂРѕРј foreach
     public void printUntilKeyInverse (DoubleLinkedList<T> doubleLinkedList, T phoneNumbers) {
         DoubleLinkedList<T> temp = new DoubleLinkedList<>();
         doubleLinkedList.forEach(temp::addToBegin);
@@ -238,6 +233,4 @@ public class DoubleLinkedList<T> implements Iterable<T> {
             System.out.println(i);
         }
     }
-
-
 }

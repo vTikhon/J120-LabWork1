@@ -1,5 +1,4 @@
 package ru.avalon.vergentev.j120.labwork1abe;
-
 import java.util.*;
 
 public class SingleLinkedList<T> implements Iterable<T> {
@@ -12,12 +11,12 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     //METHODS
-    //метод определяющий является ли элемент пустым
+    //РјРµС‚РѕРґ РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЌР»РµРјРµРЅС‚ РїСѓСЃС‚С‹Рј
     public boolean isEmpty() {
         return head == null;
     }
 
-    //метод добавления элемента в начало списка
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
     public void addToBegin (T data) {
         Linker<T> element = new Linker<>(data);
         element.data = data;
@@ -29,7 +28,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
             head = element;
         }
     }
-    //метод добавления элемента в конец списка
+
+    //РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
     public void addToEnd (T data) {
         Linker<T> element = new Linker<>(data);
         element.data = data;
@@ -41,15 +41,16 @@ public class SingleLinkedList<T> implements Iterable<T> {
         tail = element;
     }
 
-    //метод извлечения элемента из начала списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ РёР·РІР»РµС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
     public Linker<T> extractionFromBegin() {
         return head;
     }
-    //метод извлечения элемента из конца списка (задание для односвязного списка)
+    //РјРµС‚РѕРґ РёР·РІР»РµС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР°
     public Linker<T> extractionFromEnd() {
         return tail;
     }
-    //метод удаления элемента из начала списка (задание для односвязного списка)
+
+    //РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
     public void removingFromBegin() {
         if (head != tail) {
             head = head.next;
@@ -57,7 +58,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
             head = null;
         }
     }
-    //метод удаления элемента из конца списка (задание для односвязного списка)
+
+    //РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР°
     public void removingFromEnd() {
         Linker<T> element = head;
         if (head != tail) {
@@ -74,7 +76,6 @@ public class SingleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //метод определения на содержание заданного значения
     public Linker<T> keySearch(T key) {
         Linker<T> element = head;
         while (element != null) {
@@ -86,7 +87,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
         return null;
     }
 
-    //метод удаления из списка заданного значения (задание для односвязного списка)
+    //РјРµС‚РѕРґ РѕРїСЂРµРґРµР»РµРЅРёСЏ РЅР° СЃРѕРґРµСЂР¶Р°РЅРёРµ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
     public void keySearchAndRemove(T key) {
         Linker<T> element = head;
         Linker<T> previousElement = head;
@@ -103,8 +104,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
         }
     }
 
-    //ДАЛЕЕ МЕТОДЫ РАБОТЫ 1.2 J120
-    //метод итератор - для того чтобы использовать for each по списку
+    //methods which are necessary for 1.2 J120
+    //РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РёС‚РµСЂР°С‚РѕСЂР° РґР»СЏ foreach
     @Override
     public Iterator<T> iterator() {
         return new Iterator<>() {
@@ -124,13 +125,14 @@ public class SingleLinkedList<T> implements Iterable<T> {
         };
     }
 
-    //метод перебора всего списка оператором foreach
+    //РјРµС‚РѕРґ РїРµС‡Р°С‚Рё РѕС‚ РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° РґРѕ РєРѕРЅС†Р° СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј foreach
     public void printWithForEachFromBeginToEnd (SingleLinkedList<T> singleLinkedList) {
         for (T i : singleLinkedList) {
             System.out.println(i);
         }
     }
-    //метод перебора всего списка от головы до заданного значения оператором foreach
+
+    //РјРµС‚РѕРґ РѕС‚ РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° РґРѕ РєР»СЋС‡Р° foreach
     public void printUntilKey (SingleLinkedList<T> singleLinkedList, T phoneNumbers) {
         for (T i : singleLinkedList) {
             System.out.println(i);
@@ -139,7 +141,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
             }
         }
     }
-    //метод перебора всего списка от заданного значения до хвоста оператором foreach
+
+    //РјРµС‚РѕРґ РѕС‚ РєР»СЋС‡Р° РґРѕ РєРѕРЅС†Р° СЃРїРёСЃРєР° foreach
     public void printAfterKey (SingleLinkedList<T> singleLinkedList, T phoneNumbers) {
         DoubleLinkedList<T> temp = new DoubleLinkedList<>();
         for (T i : singleLinkedList) {
@@ -156,35 +159,4 @@ public class SingleLinkedList<T> implements Iterable<T> {
             System.out.println(i);
         }
     }
-
-    //метод получения N-ого элемента (вспомогательный метод)
-    public T getElement (int N) {
-        try {
-            int i = 0;
-            Linker<T> element = head;
-            while (element != null && N != i) {
-                i++;
-                element = element.next;
-            }
-            if (N >= i) {
-                assert element != null;
-                return element.data;
-            }
-        } catch (IllegalArgumentException e) {
-            System.out.println("index out of the range");
-        }
-        return null;
-    }
-
-    //метод счёта длины списка (вспомогательный метод)
-    public int getLength () {
-        int i = 0;
-        Linker<T> element = head;
-        while (element != null) {
-            i++;
-            element = element.next;
-        }
-        return i;
-    }
-
 }
