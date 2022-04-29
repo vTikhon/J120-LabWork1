@@ -173,7 +173,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
     //метод итератор - для того чтобы использовать for each по списку
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
             Linker<T> element = head;
 
             @Override

@@ -108,7 +108,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
     //переопределение итератора для foreach
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
             Linker<T> element = head;
 
             @Override
